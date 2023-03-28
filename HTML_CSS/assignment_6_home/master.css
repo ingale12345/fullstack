@@ -1,0 +1,221 @@
+body {
+  background-image: url("./background4.jpeg");
+}
+#main-content h1 {
+  position: absolute;
+  background-color: rgb(150, 149, 146);
+  width: 80%;
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  left: 250px;
+  top: -20px;
+  height: 150px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+#logo img {
+  position: relative;
+  left: 2%;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#sidebar {
+  height: 200px;
+  display: grid;
+  grid-template-columns: 30% auto 30%;
+}
+
+.widget:nth-child(2) {
+  background-color: rgb(232, 162, 0);
+}
+.widget:nth-child(1):hover {
+  transition: 2s;
+  transform: scale(1.2);
+}
+.widget:nth-child(2):hover {
+  transition: 2s;
+  transform: scale(1.2);
+}
+.widget:nth-child(3):hover {
+  transition: 2s;
+  transform: scale(1.2);
+}
+
+.widget {
+  background-color: rgb(235, 181, 56);
+}
+.widget h3 {
+  margin-left: 25%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 200px;
+  border-radius: 10px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.widget h3:hover {
+  transition: 0.7s;
+  transform: scale(1.1);
+}
+.widget p,
+address {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.widget li {
+  list-style: none;
+  margin-top: 50px;
+  font-family: "Courier New", Courier, monospace;
+}
+.widget a {
+  margin-left: 100px;
+  text-decoration: none;
+  background-color: white;
+  font-size: larger;
+  cursor: pointer;
+  border: 1px black solid;
+  border-radius: 20px;
+}
+#u-list {
+  background-color: black;
+  display: flex;
+  width: 96%;
+  height: 50px;
+  align-items: center;
+  position: relative;
+  left: 5px;
+  top: -25px;
+  border-radius: 30px;
+}
+#u-list li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 121, 72);
+  width: 250px;
+  height: 30px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+#u-list li:hover {
+  transition: 100ms;
+  background-color: rgb(6, 90, 53);
+  transform: scale(1.2);
+}
+.lead {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 900;
+  user-select: none;
+  animation: zoomText 2s none 0.5s infinite;
+}
+.lead:hover {
+  transform: scale(1.01);
+}
+
+@keyframes zoomText {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.01);
+    color: blueviolet;
+  }
+  50% {
+    transform: scale(1.02);
+    color: rgb(146, 7, 158);
+  }
+  75% {
+    transform: scale(1.01);
+    color: orange;
+  }
+  100% {
+    transform: scale(1);
+    color: black;
+  }
+}
+#special-offer {
+  background-color: rgb(188, 226, 226);
+  border: 2px black solid;
+  height: 350px;
+  display: grid;
+  grid-template-columns: 20% 30% 50%;
+  align-content: center;
+}
+#banana {
+  position: absolute;
+  top: 420px;
+  left: 1050px;
+  user-select: none;
+  /* animation-name: moveBanana;
+
+  animation-iteration-count: 3;
+  animation-duration: 1s; */
+}
+@keyframes moveBanana {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(90deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(270deg);
+    top: 5px;
+    left: 300px;
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+#special-offer p {
+  background: red;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 40px;
+  width: 700px;
+  height: 150px;
+  border: 3px solid black;
+}
+#special-offer p:hover {
+  color: red;
+  background-color: black;
+  cursor: pointer;
+}
+#special-offer h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding-top: 80px;
+}

@@ -1,0 +1,11 @@
+get all published backend courses    --->db.demo.find({tags:"backend",isPublished:true})
+sort them by their name		     --->db.demo.find({tags:"backend",isPublished:true}).sort({name:1})
+pick only their name and author      --->db.demo.find({tags:"backend",isPublished:true},{name:1,author:1}).sort({name:1})
+
+
+get all the published backend and frontend courses  --->db.demo.find({$or:[{tags:"backend"},{tags:"frontend"}],isPublished:true})
+sort them by their price in descending order	    --->db.demo.find({$or:[{tags:"backend"},{tags:"frontend"}],isPublished:true}).sort({price:1})
+pick only their name and author			    --->db.demo.find({$or:[{tags:"backend"},{tags:"frontend"}],isPublished:true},{name:1,author:1,_id:0}).sort({price:1})
+
+
+get all published courses that are $15 or more or have the word 'by' in their name--->db.demo.find({$or:[{isPublished:true,price:{$gte:15}},{name:/by/i}]})

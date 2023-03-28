@@ -1,0 +1,39 @@
+function printZipcode(pageNumber, nPerPage) {
+	if(pageNumber<=db.zipcpde.find().count()){
+  print( "Page: " + pageNumber );
+  db.students.find()
+             .sort( { _id: 1 } )
+             .skip( pageNumber > 0 ? ( ( pageNumber - 1 ) * nPerPage ) : 0 )
+             .limit( nPerPage )
+             .forEach( zipcode => {
+               print( zipcode.city);
+             } );
+pageNumber++;
+printZipcode(pageNumber,10);
+}
+}
+
+
+function Demo()
+{
+let test=passwordPrompt();
+print("\nUser Input="+test);
+}
+
+
+
+
+function Test(pageNumber,perPage)
+{
+	
+	if((pageNumber*perPage)<=db.zipcode.find({}).count()){
+
+        print("Page Number:"+pageNumber)
+
+	let ans=db.zipcode.find({}).sort({"_id":1}).limit(perPage).skip((pageNumber-1)*perPage);
+	print(ans);
+	pageNumber++;
+	Test(pageNumber,perPage)
+
+}
+}

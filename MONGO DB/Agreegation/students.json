@@ -1,0 +1,37 @@
+[
+        {
+                "f_name" : "Zenny",
+                "sex" : "Female",
+                "class" : "VI",
+                "age" : 12,
+                "grd_point" : 32.6342
+        },
+        {
+                "f_name" : "Paul",
+                "sex" : "Male",
+                "class" : "VII",
+                "age" : 13,
+                "grd_point" : 29.5904
+        },
+        {
+                "f_name" : "Tom",
+                "sex" : "Male",
+                "class" : "VI",
+                "age" : 11,
+                "grd_point" : 30.1257
+        },
+        {
+                "f_name" : "Lassy",
+                "sex" : "Female",
+                "class" : "VIII",
+                "age" : 13,
+                "grd_point" : 28.2514
+        },
+        {
+                "f_name" : "Peter",
+                "sex" : "Male",
+                "class" : "VI",
+                "age" : 11,
+                "grd_point" : 31.5201
+        }
+]       

@@ -1,0 +1,64 @@
+body {
+  background-color: cyan;
+}
+
+.primary-text {
+  background-color: rgb(75, 221, 8);
+}
+
+#primary-btn {
+  border-radius: 20px;
+  background-color: orange;
+}
+#primary-btn:hover {
+  background-color: black;
+  color: orange;
+  cursor: pointer;
+}
+
+.btn, #primary-btn {
+  padding: 10px;
+  margin-top: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.bordered-text, h1 {
+  border-bottom: 2px black solid;
+  border-top: 2px black dotted;
+}
+
+.centerText, h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redText, h1 {
+  color: red;
+}
+
+h1 {
+  border-radius: 30px;
+}
+
+div {
+  font-size: 20px;
+}
+
+ul#list {
+  list-style: none;
+  background-color: #87f952;
+}
+ul#list li {
+  padding: 10px;
+}
+ul#list li a {
+  text-decoration: none;
+}
+ul#list li a:hover {
+  color: magenta;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */

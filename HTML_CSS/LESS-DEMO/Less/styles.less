@@ -1,0 +1,68 @@
+@primary-color: rgb(75, 221, 8);
+@secondary-color: orange;
+@margin: 20px+10px;
+body {
+  .backColor(cyan);
+}
+.backColor(@color) {
+  background-color: @color;
+}
+.primary-text {
+  background-color: @primary-color;
+}
+#primary-btn:extend(.btn) {
+  .rounded-border(20px);
+  background-color: @secondary-color;
+  &:hover {
+    background-color: black;
+    color: @secondary-color;
+    cursor: pointer;
+  }
+}
+// #primary-btn:hover {
+
+// }
+.rounded-border(@radius) {
+  border-radius: @radius;
+}
+.btn {
+  padding: 10px;
+  margin-top: 50px;
+  width: 100%;
+  margin-top: @margin;
+}
+.bordered-text {
+  border-bottom: 2px black solid;
+  border-top: 2px black dotted;
+}
+.centerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.redText {
+  color: red;
+}
+h1 {
+  .bordered-text;
+  .redText;
+  .centerText;
+  .rounded-border(30px);
+}
+div {
+  font-size: 20px;
+}
+ul#list {
+  list-style: none;
+  background-color: lighten(@primary-color, 20px);
+  li {
+    padding: 10px;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: magenta;
+        font-size: 20px;
+      }
+    }
+  }
+}

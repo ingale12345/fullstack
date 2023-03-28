@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function headerInternal() {
+        var x = document.getElementById("p1");
+        var y = document.getElementById("p2");
+
+        if (x.style.display === "none" && y.style.display === "none") {
+          x.style.display = "block";
+          y.style.display = "block";
+        } else {
+          x.style.display = "none";
+          y.style.display = "none";
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-image: url("./images/background1.jfif");
+      }
+      h1 {
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+      }
+      p {
+        position: absolute;
+        width: 50%;
+        left: 300px;
+        display: flex;
+        justify-content: center;
+        border-radius: 40px;
+      }
+      #p1 {
+        color: blueviolet;
+        border: 4px dotted red;
+        background-image: url("./images/background4.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #p2 {
+        border: 4px double maroon;
+        margin-top: 30px;
+        background-color: gold;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internal style</title>
+  </head>
+  <body>
+    <h1 onmouseover="headerInternal();">Internal <em>CSS</em></h1>
+    <br />
+    <p id="p1">Its clearer than <a href="inline.html"> inline </a>css</p>
+    <br />
+    <p id="p2">I am another paragraph</p>
+  </body>
+</html>

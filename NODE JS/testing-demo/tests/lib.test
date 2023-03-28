@@ -1,0 +1,88 @@
+const lib = require("./lib");
+const db = require("./db");
+const mail = require("./mail");
+describe("Absolute", () => {
+  it("should return positive number if input is positive", () => {
+    const result = lib.absolute(1);
+    expect(result).toBe(1);
+  });
+  it("should return negative number if input is negative", () => {
+    const result = lib.absolute(-12);
+    expect(result).toBe(12);
+  });
+  it("should return zero if input is zero", () => {
+    const result = lib.absolute(0);
+    expect(result).toBe(0);
+  });
+});
+
+describe("Greet", () => {
+  it("Should return welcome message", () => {
+    const result = lib.greet("Prajwal");
+    expect(result).toMatch(/Prajwal/);
+    expect(result).toMatch("Prajwal");
+  });
+});
+
+describe("getCurrencies", () => {
+  it("Should return Array of Currencies", () => {
+    const result = lib.getCurrencies();
+    // expect(result[0]).toBe("USD");
+    // expect(result[1]).toBe("AUD");
+    // expect(result[2]).toBe("EUR");
+    expect(result).toEqual(expect.arrayContaining(["AUD", "USD", "EUR"]));
+  });
+});
+describe("getProduct", () => {
+  it("should return a product with given id", () => {
+    const result = lib.getProduct(101);
+    //toEqual matches all the properties of the Object
+    // expect(result).toEqual({ id: 101, price: 10 });
+    expect(result).toMatchObject({ id: 101, price: 10 });
+    expect(result).toHaveProperty("id", 101);
+  });
+});
+
+describe("Register User", () => {
+  it("should return error if username is falsey", () => {
+    let values = [undefined, false, null, NaN, 0, ""];
+
+    values.forEach((value) => {
+      expect(() => lib.registerUser(value)).toThrow();
+    });
+  });
+  it("should return a Object with given username", () => {
+    const result = lib.registerUser("prajwal");
+    //    expect(result).toMatchObject({ id: 101, price: 10 });
+    expect(result).toHaveProperty("username", "prajwal");
+    expect(result.id).toBeGreaterThan(0);
+  });
+});
+
+describe("ApplyDiscount", () => {
+  it("should return discount price", () => {
+    const order = { customerId: 1, totalPrice: 10 };
+    db.getCustomerSync = jest
+      .fn()
+      .mockReturnValue({ customerId: 1, points: 12 });
+
+    lib.applyDiscount(order);
+    expect(order.totalPrice).toBe(9);
+  });
+});
+
+describe("notifyCustomer", () => {
+  it("should Send an email to the customer", () => {
+    const order = { customerId: 1 };
+    db.getCustomerSync = jest
+      .fn()
+      .mockReturnValue({ customerId: 1, email: "a" });
+
+    mail.send = jest.fn();
+
+    lib.notifyCustomer(order);
+    expect(mail.send).toHaveBeenCalled();
+    expect(mail.send.mock.calls[0][0]).toBe("a");
+    expect(mail.send.mock.calls[0][1]).toContain("order");
+  });
+});

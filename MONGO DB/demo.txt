@@ -1,0 +1,20 @@
+db.Demo.find().forEach(function(myDoc){
+   db.Demo.updateOne(
+      { _id: myDoc._id },
+      { "$set": { "language": [myDoc.language] } }
+   );
+})
+
+
+db.deliveries.updateMany(
+  {},
+  [{ $set: { city: { $concat: ["$city",""] } } }],
+  { multi: true }
+)
+
+
+db.collection.update(
+  {},
+  [{ $set: { a: { $concat: [ "$a", "World" ] } } }],
+  { multi: true }
+)

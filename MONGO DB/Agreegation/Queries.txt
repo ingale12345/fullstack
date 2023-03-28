@@ -1,0 +1,175 @@
+agr> db.students.find({});
+[
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b04"),
+    f_name: 'Zenny',
+    sex: 'Female',
+    class: 'VI',
+    age: 12,
+    grd_point: 32.6342
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b05"),
+    f_name: 'Paul',
+    sex: 'Male',
+    class: 'VII',
+    age: 13,
+    grd_point: 29.5904
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b06"),
+    f_name: 'Tom',
+    sex: 'Male',
+    class: 'VI',
+    age: 11,
+    grd_point: 30.1257
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b07"),
+    f_name: 'Lassy',
+    sex: 'Female',
+    class: 'VIII',
+    age: 13,
+    grd_point: 28.2514
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b08"),
+    f_name: 'Peter',
+    sex: 'Male',
+    class: 'VI',
+    age: 11,
+    grd_point: 31.5201
+  }
+]
+agr> db.students.countDocuments()
+5
+agr>
+
+agr>
+
+agr> db.students.updateMany({},{$rename:{sex:"gender"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+agr> db.students.find({})
+[
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b04"),
+    f_name: 'Zenny',
+    class: 'VI',
+    age: 12,
+    grd_point: 32.6342,
+    gender: 'Female'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b05"),
+    f_name: 'Paul',
+    class: 'VII',
+    age: 13,
+    grd_point: 29.5904,
+    gender: 'Male'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b06"),
+    f_name: 'Tom',
+    class: 'VI',
+    age: 11,
+    grd_point: 30.1257,
+    gender: 'Male'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b07"),
+    f_name: 'Lassy',
+    class: 'VIII',
+    age: 13,
+    grd_point: 28.2514,
+    gender: 'Female'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b08"),
+    f_name: 'Peter',
+    class: 'VI',
+    age: 11,
+    grd_point: 31.5201,
+    gender: 'Male'
+  }
+]
+agr>
+
+agr>
+
+agr> db.students.aggregate([$group:{_id:"$gender",my_rrsult:{$sum:1}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:29)
+
+> 1 | db.students.aggregate([$group:{_id:"$gender",my_rrsult:{$sum:1}}])
+    |                              ^
+  2 |
+
+agr> db.students.aggregate([{$group:{_id:"$gender",my_rrsult:{$sum:1}}}])
+[ { _id: 'Male', my_rrsult: 3 }, { _id: 'Female', my_rrsult: 2 } ]
+agr> db.students.aggregate([{$group:{_id:"$gender",my_result:{$sum:1}}}])
+[ { _id: 'Female', my_result: 2 }, { _id: 'Male', my_result: 3 } ]
+agr>
+
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",my_result:{$sum:1}}}])
+[ { _id: 'Male', my_result: 3 }, { _id: 'Female', my_result: 2 } ]
+agr> db.students.aggregate([{$group:{_id:"$gender",my_result:{$sum:2}}}])
+[ { _id: 'Male', my_result: 6 }, { _id: 'Female', my_result: 4 } ]
+agr>
+
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",my_result:{$sum:2}}}])
+[ { _id: 'Male', my_result: 6 }, { _id: 'Female', my_result: 4 } ]
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",Max_age:{$max:"$age"}}}])
+[ { _id: 'Male', Max_age: 13 }, { _id: 'Female', Max_age: 13 } ]
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",Max_age:{$min:"$age"}}}])
+[ { _id: 'Male', Max_age: 11 }, { _id: 'Female', Max_age: 12 } ]
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",Min_age:{$min:"$age"}}}])
+[ { _id: 'Male', Min_age: 11 }, { _id: 'Female', Min_age: 12 } ]
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",Avarage_age:{$avg:"$age"}}}])
+[
+  { _id: 'Male', Avarage_age: 11.666666666666666 },
+  { _id: 'Female', Avarage_age: 12.5 }
+]
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",Avarage_age:{$avg:"$age"}}}])
+[
+  { _id: 'Male', Avarage_age: 11.666666666666666 },
+  { _id: 'Female', Avarage_age: 12.5 }
+]
+agr>
+
+agr>
+
+agr> db.students.aggregate([{$group:{_id:"$gender",first:{$first:"$f_name"}}}])
+[ { _id: 'Male', first: 'Paul' }, { _id: 'Female', first: 'Zenny' } ]
+agr>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page</title>
+    <style>
+      p {
+        border-bottom: black thin solid;
+      }
+      a {
+        font-weight: bold;
+        color: rgb(47, 175, 175);
+      }
+      #anyOneDiv {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 20px;
+        background-color: rgb(206, 207, 196);
+      }
+      #meetInfo p:nth-child(2),
+      p:nth-child(4),
+      p:nth-child(6),
+      p:nth-child(8) {
+        margin-left: 20px;
+      }
+      #meetInfo {
+        display: grid;
+        margin: 0 20;
+        grid-template-columns: 30% 70%;
+      }
+      @media screen and (max-width: 500px) {
+        /* #meetInfo {
+          grid-template-columns: 100%;
+        } */
+        #anyOneDiv {
+          text-align: left;
+          row-gap: 30px;
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: center">
+    <div id="container" style="width: 500px; border: 1px black solid">
+      <div
+        align="center"
+        style="
+          border: 2px black solid;
+          background-color: rgb(28, 154, 19);
+          padding: 25px 0 25px 0;
+          font-size: 40px;
+          color: white;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        "
+      >
+        New task assigned
+      </div>
+      <div style="padding-left: 30px; padding-right: 30px">
+        <div style="margin-top: 20px">
+          New task assigned to you by <b>Prajwal Ingale</b>
+        </div>
+        <h2
+          style="
+            font-weight: bold;
+            font-size: 2rem;
+            margin-top: 10px;
+            color: green;
+          "
+        >
+          Sample task
+        </h2>
+        <hr style="height: 2px; background-color: black" />
+        <div id="meetInfo">
+          <!-- <div>
+            <p>Description:</p>
+            <p>Priority:</p>
+            <p>Estimate:</p>
+            <p>Due Date:</p>
+          </div>
+          <div>
+            <p>A description for the sample task!</p>
+            <p>High</p>
+            <p>45 minutes</p>
+            <p>2017-01-31</p>
+          </div> -->
+
+          <p>Description:</p>
+          <p>A description for the sample task!</p>
+          <p>Priority:</p>
+          <p>High</p>
+          <p>Estimate:</p>
+          <p>45 minutes</p>
+          <p>Due Date:</p>
+          <p>2017-01-31</p>
+        </div>
+        <ul style="list-style: square">
+          <li>
+            <a href="#" style="font-size: 1em; margin: 50px 0px">Respond</a>
+          </li>
+        </ul>
+      </div>
+      <div id="anyOneDiv">
+        <div align="center">
+          <span style="font-size: 2.5rem; font-weight: bold"
+            >Task<span style="color: green">Anyone</span></span
+          ><sup>TM</sup>
+          <br />
+          <span style="font-size: 0.9em"
+            ><i>We'll follow-up till they follow-through</i></span
+          >
+        </div>
+        <div align="center">
+          TaskAnyone helps you to keep track of your daily to-ads and assing
+          tasks to anyone with an email address
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(170, 172, 151);
+          /* text-align: center; */
+          padding: 10px 0px 10px 20px;
+        "
+      >
+        <b>Please do not "reply" to this email. </b>Use the link above to
+        respond
+      </div>
+      <div
+        style="
+          background-color: rgb(241, 242, 235);
+          text-align: center;
+          padding-top: 20px;
+        "
+      >
+        2016 &copy; Task Solutions Inc.
+        <a href="#" style="border-left: 1px solid black; padding-left: 10px"
+          >Privacy</a
+        ><a
+          href="#"
+          style="
+            border-left: 1px solid black;
+            padding-left: 10px;
+            margin-left: 5px;
+          "
+          >TaskAnyone</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

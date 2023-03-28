@@ -1,0 +1,70 @@
+body {
+  background-color: azure;
+}
+#container {
+}
+p {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+h1:hover {
+  border: solid thick white;
+  background-color: black;
+  border-radius: 50px;
+  color: white;
+}
+a {
+  margin-top: 10px;
+  font-size: 25px;
+  display: flex;
+  width: 300px;
+  padding: 10px 10px;
+  justify-content: center;
+  text-decoration: wavy;
+}
+a:hover {
+  text-decoration: underline;
+  cursor: wait;
+}
+#link-1 {
+  border: double 3px;
+  border-color: black;
+
+  background-color: chocolate;
+  color: white;
+  border-radius: 50px;
+}
+#link-1:hover {
+  background-color: cadetblue;
+}
+#link-2 {
+  border: thin black solid;
+  background-color: cyan;
+}
+#link-2:hover {
+  border-color: black;
+  border: 3px dotted red;
+  border-radius: 50px;
+}
+#link-3 {
+  border: 3px dotted purple;
+  background-color: magenta;
+}
+#link-3:hover {
+  width: 100%;
+  background-color: blanchedalmond;
+  color: blue;
+  border-radius: 50px;
+}
+#link-4 {
+  border: 2px ridge blue;
+}
+#link-4:hover {
+  background-color: black;
+  color: white;
+  content: "Google";
+}

@@ -1,0 +1,76 @@
+1. Create a group of states and find out total population of the state. Find out state where population is greater than 1,00,00,000
+
+zipcodeDemo> db.zipcode.aggregate([{$group:{_id:"$state",totalPopulation:{$sum:"$pop"}}},{$match:{"totalPopulation":{$gte:10000000}}}])
+[
+  { _id: 'NY', totalPopulation: 17990402 },
+  { _id: 'TX', totalPopulation: 16984601 },
+  { _id: 'CA', totalPopulation: 29754890 },
+  { _id: 'OH', totalPopulation: 10846517 },
+  { _id: 'PA', totalPopulation: 11881643 },
+  { _id: 'FL', totalPopulation: 12686644 },
+  { _id: 'IL', totalPopulation: 11427576 }
+]
+zipcodeDemo>
+
+
+
+
+2. Group the collection with state and city , get the total population of the city. 
+
+
+zipcodeDemo>  db.zipcode.aggregate([{$group:{_id:{"state":"$state","city":"$city"}, cityPop:{$sum:"$pop"}}}])
+[
+  { _id: { state: 'NY', city: 'GREAT NECK' }, cityPop: 31323 },
+  { _id: { state: 'MN', city: 'INVER GROVE HEIG' }, cityPop: 22753 },
+  { _id: { state: 'MN', city: 'WOLVERTON' }, cityPop: 834 },
+  { _id: { state: 'IL', city: 'GALVA' }, cityPop: 3725 },
+  { _id: { state: 'OK', city: 'CARRIER' }, cityPop: 619 },
+  { _id: { state: 'FL', city: 'SUMMERLAND KEY' }, cityPop: 3952 },
+  { _id: { state: 'HI', city: 'HAKALAU' }, cityPop: 198 },
+  { _id: { state: 'ME', city: 'BETHEL' }, cityPop: 2775 },
+  { _id: { state: 'GA', city: 'GLENN' }, cityPop: 7230 },
+  { _id: { state: 'VT', city: 'GREENSBORO BEND' }, cityPop: 405 },
+  { _id: { state: 'VA', city: 'MONTEZUMA' }, cityPop: 4777 },
+  { _id: { state: 'WV', city: 'REEDY' }, cityPop: 3014 },
+  { _id: { state: 'NY', city: 'WOODRIDGE' }, cityPop: 2047 },
+  { _id: { state: 'TX', city: 'IDALOU' }, cityPop: 4632 },
+  { _id: { state: 'KS', city: 'MORAN' }, cityPop: 1214 },
+  { _id: { state: 'MI', city: 'WATERFORD' }, cityPop: 66668 },
+  { _id: { state: 'MI', city: 'HONOR' }, cityPop: 945 },
+  { _id: { state: 'AR', city: 'MANSFIELD' }, cityPop: 2607 },
+  { _id: { state: 'WV', city: 'DRY CREEK' }, cityPop: 209 },
+  { _id: { state: 'CA', city: 'TORRANCE' }, cityPop: 158183 }
+]
+Type "it" for more
+
+
+Then group the collection with state and find out average population of the state.
+
+
+zipcodeDemo>  db.zipcode.aggregate([{$group:{_id:{"state":"$state","city":"$city"}, cityPop:{$sum:"$pop"}}},{$group:{_id:"$_id.state",AvgPop:{$avg:"$cityPop"}}}])
+[
+  { _id: 'WV', AvgPop: 2771.4775888717154 },
+  { _id: 'AR', AvgPop: 4175.355239786856 },
+  { _id: 'NC', AvgPop: 10622.815705128205 },
+  { _id: 'NJ', AvgPop: 15775.89387755102 },
+  { _id: 'IA', AvgPop: 3123.0821147356583 },
+  { _id: 'HI', AvgPop: 15831.842857142858 },
+  { _id: 'IL', AvgPop: 9954.334494773519 },
+  { _id: 'NE', AvgPop: 3034.882692307692 },
+  { _id: 'MI', AvgPop: 12087.512353706112 },
+  { _id: 'TN', AvgPop: 9656.350495049504 },
+  { _id: 'FL', AvgPop: 27400.958963282937 },
+  { _id: 'SC', AvgPop: 11139.626198083068 },
+  { _id: 'LA', AvgPop: 10465.496277915632 },
+  { _id: 'WA', AvgPop: 12258.670025188916 },
+  { _id: 'MA', AvgPop: 14855.37037037037 },
+  { _id: 'GA', AvgPop: 11547.62210338681 },
+  { _id: 'KY', AvgPop: 4767.164721141375 },
+  { _id: 'OR', AvgPop: 8262.561046511628 },
+  { _id: 'OH', AvgPop: 12700.839578454332 },
+  { _id: 'AK', AvgPop: 2976.4918032786886 }
+]
+Type "it" for more
+zipcodeDemo>
+
+

@@ -1,0 +1,11 @@
+/*
+element 1 point
+class 10 point 
+id    100 points
+
+inline css have 1000 points
+
+*/
+#container p.para {
+  background-color: cyan;
+}

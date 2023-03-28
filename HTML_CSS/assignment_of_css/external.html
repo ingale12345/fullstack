@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function demo1() {
+        var x2 = document.getElementById("li2");
+        var x1 = document.getElementById("li1");
+        var x3 = document.getElementById("li3");
+        x1.style.color = "red";
+        x2.style.color = "red";
+        x3.style.color = "red";
+      }
+      function demo2() {
+        var x2 = document.getElementById("li2");
+        var x1 = document.getElementById("li1");
+        var x3 = document.getElementById("li3");
+        x1.style.color = "black";
+        x2.style.color = "black";
+        x3.style.color = "black";
+      }
+    </script>
+    <link rel="stylesheet" href="external.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>External CSS</title>
+  </head>
+  <body>
+    <!-- this is a comment -->
+    <h1>External CSS</h1>
+    <p>This document is styled using External CSS. It is the best practise.</p>
+    <h2 onmouseover="demo1();" onmouseleave="demo2();">
+      There are 3 ways to add CSS
+    </h2>
+    <ol>
+      <li id="li1">Inline</li>
+      <li id="li2">Internal</li>
+      <li id="li3">External</li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+.div-1 {
+  margin: auto;
+  width: 450px;
+  border: 5px dotted;
+}
+.div-2 {
+  margin: auto;
+  width: 1080px;
+}
+h2 {
+  color: orange;
+}
+
+/*
+#lname {
+  position: absolute;
+  top: 80px;
+  right: 100px;
+  width: 200px;
+  height: 15px;
+}
+#llname {
+  position: absolute;
+  top: 80px;
+  right: 300px;
+  width: 100px;
+  height: 15px;
+}
+#name {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+}*/
+body {
+  background-color: cyan;
+}
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+input[type="button"] {
+  width: 100%;
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type="button"]:hover {
+  background-color: magenta;
+}
+input[type="text"]:hover {
+  background-color: magenta;
+}

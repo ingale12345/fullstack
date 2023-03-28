@@ -1,0 +1,42 @@
+body {
+  background-image: url("./images/background4.jpeg");
+}
+h1 {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+  border-radius: 100px;
+}
+p {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  color: brown;
+}
+h2 {
+  border: 3px double;
+  width: 450px;
+  border-radius: 50px;
+  background-color: cyan;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+ol {
+  font-size: 20px;
+
+  /* color: red; */
+}
+li {
+  border: 2px dotted;
+  margin-top: 20px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  background-color: yellowgreen;
+  border-radius: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}

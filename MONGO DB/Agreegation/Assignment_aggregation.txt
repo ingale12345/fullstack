@@ -1,0 +1,86 @@
+agr> db.students.aggregate([{$match:{$or:[{grd_point:{$gte:25,$lte:30}}]}}])
+[
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b05"),
+    f_name: 'Paul',
+    class: 'VII',
+    age: 13,
+    grd_point: 29.5904,
+    gender: 'Male'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b07"),
+    f_name: 'Lassy',
+    class: 'VIII',
+    age: 13,
+    grd_point: 28.2514,
+    gender: 'Female'
+  }
+]
+agr>
+
+agr> db.students.aggregate([{$match:{$or:[{grd_point:{$gte:25,$lte:30}}]}},{$project:{f_name:1,_id:0,class:1,age:1}}])
+[
+  { f_name: 'Paul', class: 'VII', age: 13 },
+  { f_name: 'Lassy', class: 'VIII', age: 13 }
+]
+
+
+
+
+
+agr> db.students.aggregate([{$match:{grd_point:{$gte:25}}}])
+[
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b04"),
+    f_name: 'Zenny',
+    class: 'VI',
+    age: 12,
+    grd_point: 32.6342,
+    gender: 'Female'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b05"),
+    f_name: 'Paul',
+    class: 'VII',
+    age: 13,
+    grd_point: 29.5904,
+    gender: 'Male'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b06"),
+    f_name: 'Tom',
+    class: 'VI',
+    age: 11,
+    grd_point: 30.1257,
+    gender: 'Male'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b07"),
+    f_name: 'Lassy',
+    class: 'VIII',
+    age: 13,
+    grd_point: 28.2514,
+    gender: 'Female'
+  },
+  {
+    _id: ObjectId("62e2327465acdafb9bfd1b08"),
+    f_name: 'Peter',
+    class: 'VI',
+    age: 11,
+    grd_point: 31.5201,
+    gender: 'Male'
+  }
+]
+agr> db.students.aggregate([{$match:{grd_point:{$gte:25}}},{$project:{_id:0,f_name:1,age:1}}])
+[
+  { f_name: 'Zenny', age: 12 },
+  { f_name: 'Paul', age: 13 },
+  { f_name: 'Tom', age: 11 },
+  { f_name: 'Lassy', age: 13 },
+  { f_name: 'Peter', age: 11 }
+]
+
+
+
+

@@ -1,0 +1,2 @@
+this is the example of static middleware function 
+using app.use(express.static("public"))

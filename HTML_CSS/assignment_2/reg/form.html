@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function demo() {
+        var fname = document.getElementById("fname").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+
+        document.getElementById("d1").innerHTML = fname;
+        document.getElementById("d2").innerHTML = email;
+        document.getElementById("d3").innerHTML = phone;
+        document.getElementById("d4").innerHTML = "Pune";
+        document.getElementById("d6").innerHTML = "MERN stack Developer";
+        document.getElementById("d5").innerHTML = "male";
+        window.alert("Registration Completed.");
+        window.location.href = "../first.html";
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="div-1">
+      <h2 align="center">Employee Details</h2>
+      <!--<form>-->
+      <label id="ffname">First Name:</label>
+      <input type="text" id="fname" /> <label id="mmname">Middle Name:</label
+      ><input type="text" id="mname" />
+      <label id="llname">Last Name:</label>
+      <input type="text" id="lname" /><br /><br />
+      Contact: <input type="text" placeholder="+91-" id="phone" /> Email:
+      <input type="email" placeholder="example.@gmail.com" id="email" />
+      Address:
+      <textarea name="textarea" id="textarea" cols="30" rows="2"></textarea>
+
+      Select Gender :
+      <input type="radio" name="gender" id="gender" value="male" />Male
+      <input type="radio" name="gender" id="gender" value="male" />Female
+      <br /><br />
+      Designation:
+      <select name="dselect" id="dselect">
+        <option value="mern">MERN stack Developer</option>
+        <option value="php">PHP Developer</option>
+        <option value="mean">MEAN Developer</option>
+        <option value="sql">SQL Developer</option>
+        <option value="java">JAVA Developer</option></select
+      ><br />
+      Enter Password: <input type="password" id="pass" /><br />
+      confirm Password: <input type="password" id="cpass" />
+      <input type="button" value="Submit" onclick="demo()" />
+      <!--- </form>-->
+    </div>
+    <div class="div-2">
+      <table border="2">
+        <th>Emp name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Designation</th>
+        <tr>
+          <td>Prajwal</td>
+          <td>Prajwal@gmail.com</td>
+          <td>+91 9284904192</td>
+          <td>Pune</td>
+          <td>male</td>
+          <td>MERN stack Developer</td>
+        </tr>
+        <tr>
+          <td>Rohit</td>
+          <td>Rohit@gmail.com</td>
+          <td>+91 7709531695</td>
+          <td>Pune</td>
+          <td>male</td>
+          <td>Full stack java Developer</td>
+        </tr>
+        <tr>
+          <td id="d1"></td>
+          <td id="d2"></td>
+          <td id="d3"></td>
+          <td id="d4"></td>
+          <td id="d5"></td>
+          <td id="d6"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
